@@ -13,7 +13,6 @@ const nextConfig = {
 
   // Performance optimizations
   compress: true,
-  swcMinify: true,
 
   // Production headers
   async headers() {
