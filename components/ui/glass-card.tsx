@@ -1,102 +1,19 @@
 import * as React from 'react'
 
-import { cn } from '@/lib/utils'
-
-function GlassCard({ className, ...props }: React.ComponentProps<'div'>) {
-  return (
-    <div
-      className={cn(
-        'bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg',
-        className,
-      )}
-      {...props}
-    />
+export default function GlassCard({children}:{children:React.ReactNode}){
+  return(
+    <div className="
+     backdrop-blur-xl
+     bg-white/10
+     border border-white/20
+     rounded-2xl
+     p-8
+     shadow-xl
+    ">
+     {children}
+    </div>
   )
 }
-
-export { GlassCard }
-
-
-components/
-
-
-  hero/
-    hero.tsx
-    particle-background.tsx
-
-
-  timeline/
-    cinematic-timeline.tsx
-
-
-  ai/
-    ada-chat.tsx
-
-
-  engine/
-    analytical-engine.tsx
-
-
-  algorithm/
-    algorithm-visualizer.tsx
-
-
-  ui/
-    glass-card.tsx
-
-
-lib/
-
-
-  openai.ts
-  utils.ts
-
-
-styles/
-
-
-  globals.css
-
-
-public/
-
-
-  ada.png
-  engine-model.glb
-
-
-Futuristic UI Design System
-
-Glassmorphism base card
-
-export default function GlassCard({children}:{children:React.ReactNode}){
-
-
- return(
-  <div className="
-   backdrop-blur-xl
-   bg-white/10
-   border border-white/20
-   rounded-2xl
-   p-8
-   shadow-xl
-  ">
-   {children}
-  </div>
- )
-
-
-}
-
-Gradient background
-
-body{
-
-
- background:
- radial-gradient(circle at 20% 20%,#7c3aed33,transparent),
- radial-gradient(circle at 80% 0%,#ec489933,transparent),
- #020617;
 
 
  color:white;
