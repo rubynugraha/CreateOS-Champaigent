@@ -1,0 +1,10 @@
+# runtime files
+runtime_loader.js
+devtools.tsx
+jsx-dev-runtime.ts
+
+# Common ignores
+node_modules/
+.next/
+.env*.local
+.DS_Store
