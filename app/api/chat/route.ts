@@ -1,3 +1,5 @@
+export const runtime = 'edge'
+
 import { chatWithAda } from '@/lib/openai'
 
 export async function POST(req: Request) {

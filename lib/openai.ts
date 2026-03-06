@@ -1,12 +1,15 @@
 import OpenAI from 'openai'
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-})
-
-export { openai }
+function getOpenAIClient() {
+  const apiKey = process.env.OPENAI_API_KEY
+  if (!apiKey) {
+    throw new Error('OPENAI_API_KEY environment variable is missing or empty')
+  }
+  return new OpenAI({ apiKey })
+}
 
 export async function chatWithAda(message: string): Promise<string> {
+  const openai = getOpenAIClient()
   const completion = await openai.chat.completions.create({
     model: 'gpt-4o-mini',
     messages: [
@@ -28,12 +31,13 @@ export async function chatWithAda(message: string): Promise<string> {
 }
 
 export async function generateStory(topic: string): Promise<string> {
+  const openai = getOpenAIClient()
   const completion = await openai.chat.completions.create({
     model: 'gpt-4o-mini',
     messages: [
       {
         role: 'system',
-        content: `Write a short, inspiring tech story (2-3 paragraphs) narrated from Ada Lovelace's perspective. 
+        content: `Write a short, inspiring tech story (2-3 paragraphs) narrated from Ada Lovelace's perspective.
 Make it poetic, profound, and about how computing shapes humanity.`,
       },
       {
