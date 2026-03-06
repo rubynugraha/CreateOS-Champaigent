@@ -1,6 +1,6 @@
 export const runtime = 'edge'
 
-import { generateStory } from '@/lib/openai'
+import { generateStory } from '@/lib/grok'
 
 export async function POST(req: Request) {
   try {

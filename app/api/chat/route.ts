@@ -1,6 +1,6 @@
 export const runtime = 'edge'
 
-import { chatWithAda } from '@/lib/openai'
+import { chatWithAda } from '@/lib/grok'
 
 export async function POST(req: Request) {
   try {
