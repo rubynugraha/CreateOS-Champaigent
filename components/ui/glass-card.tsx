@@ -1,101 +1,20 @@
-AdaVerse v2 – Apple‑Level Futuristic Web Experience
+import * as React from 'react'
 
-Production‑Grade Next.js 15 Application Inspired by Ada Lovelace
+import { cn } from '@/lib/utils'
 
-Goal: Build a viral, visually stunning educational experience celebrating computing history while demonstrating cutting‑edge web technology.
+function GlassCard({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      className={cn(
+        'bg-white/10 backdrop-blur-md border border-white/20 rounded-lg shadow-lg',
+        className,
+      )}
+      {...props}
+    />
+  )
+}
 
-Target Metrics
-
-Lighthouse Performance: 95–100
-
-First Contentful Paint < 1s
-
-TTFB < 200ms (Edge)
-
-JS Bundle < 120kb initial
-
-Core Experience
-
-AdaVerse v2 is an interactive storytelling platform where users explore the origins of computing through immersive visuals, AI interaction, and algorithm simulations.
-
-Key experiences:
-
-Cinematic scrolling timeline
-
-AI Ada assistant
-
-3D Analytical Engine simulator
-
-Interactive algorithm playground
-
-GPU particle hero background
-
-AI storytelling generator
-
-Tech Stack (Startup‑Grade)
-
-Frontend
-
-Next.js 15 (App Router)
-
-React Server Components
-
-TypeScript
-
-TailwindCSS
-
-Framer Motion
-
-React Three Fiber (Three.js)
-
-D3.js
-
-AI
-
-OpenAI API
-
-Edge streaming responses
-
-Infrastructure
-
-Vercel Edge Runtime
-
-PostgreSQL (Neon or Supabase)
-
-Redis cache
-
-Optimization
-
-Partial prerendering
-
-Image optimization
-
-Dynamic imports
-
-Streaming UI
-
-Repository Architecture
-ada-verse/
-
-
-app/
-
-
-  layout.tsx
-  page.tsx
-
-
-  api/
-    ai-chat/route.ts
-    story/route.ts
-
-
-  timeline/
-    page.tsx
-
-
-  playground/
-    page.tsx
+export { GlassCard }
 
 
 components/
